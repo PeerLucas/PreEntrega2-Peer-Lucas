@@ -134,7 +134,7 @@ header nav ul li a {
     }
 }
 
-@media screen and (max-width:750px) and (orientacion:landscape) {
+@media screen and (max-width:750px) {
     header div {
         flex-direction: column;
         height: 20vh;
