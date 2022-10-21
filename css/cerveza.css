@@ -10,55 +10,108 @@
 }
 
 /**-----------------------------INDEX-------------------------------*/
-header {
-    background-color: #215130;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-
+nav {
+    background: #215130;
+    height: 80px;
+    width: 100%;
 }
 
-header div {
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
+.enlace {
+    position: absolute;
     color: white;
-    font-size: 45px;
-    font-family: 'Lobster', cursive;
-    padding: 5px;
-
+    font-size: 30px;
+    margin: 13px 20px;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
+nav ul {
+    float: right;
+    margin-right: 20px;
 }
 
-header h1:hover {
-    color: black;
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
 }
 
-header nav ul li a:hover {
-    color: black;
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    line-height: inherit;
 }
 
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    padding: 0.3rem;
-    margin: 0;
-    font-family: 'Sen', sans-serif;
+li a.active,
+li a:hover {
+    color: #FFD700;
 }
 
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 952px) {
+    .enlace {
+        padding-left: 20px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    li a:hover,
+    li a.active {
+        background: none;
+        color: red;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
 .fondo {
     background-image: url(../img/fachada2.jpg);
     width: 100%;
-    height: calc(100vh - 62.5px);
+    height: calc(100vh - 80px);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
@@ -135,11 +188,13 @@ header nav ul li a {
 }
 
 @media screen and (max-width:750px) {
-    header div {
+    /* header div {
         flex-direction: column;
         height: 20vh;
         padding-bottom: 4%;
     }
+
+ */
 
 
     .publicidad {
